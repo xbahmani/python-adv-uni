@@ -16,7 +16,7 @@ class Fetcher:
     def nerds(self):
         
         return {
-            f"{student.get('first_name', 'Unknown')} {student.get('last_name', 'Unknown')}"
+            f"{student.get('first_name', 'Unknown')} {student.get('last_name')}"
             for student in self.__students
             if student.get('score', 0) > 18.5
         }
@@ -26,7 +26,7 @@ class Fetcher:
         highest_score = max(student.get('score', 0) for student in self.__students)
         
         return tuple(
-            f"{student.get('first_name', 'Unknown')} {student.get('last_name', 'Unknown')}"
+            f"{student.get('first_name', 'Unknown')} {student.get('last_name')}"
             for student in self.__students
             if student.get('score', 0) == highest_score
         )
